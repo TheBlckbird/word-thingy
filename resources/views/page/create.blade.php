@@ -11,13 +11,14 @@
         @csrf
 
         <label>
-            Question:<br>
+            Topic:<br>
             <input type="text" name="question" id="question">
-        </label><br>
+        </label><br><br>
 
         <label>
             Password:<br>
-            <input type="password" name="password" id="password">
+            <input type="password" name="password" id="password"><br>
+            Remember it, you need to edit or delete the page later<br>
         </label><br>
         
         <button type="submit">Create</button>
