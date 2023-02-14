@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Word extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'word',
+        'count',
+        'page_id',
+    ];
+
+    public function page() {
+        return $this->belongsTo(Page::class);
+    }
 }

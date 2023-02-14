@@ -1,0 +1,11 @@
+.admin-form {
+    margin-top: 16px;
+}
+
+.flex {
+    display: flex;
+
+    &__gap_10px {
+        gap: 10px;
+    }
+}

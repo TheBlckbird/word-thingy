@@ -13,12 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pages', function (Blueprint $table) {
-            $table->id();
-            $table->string('url_id');
-            $table->string('question');
-            $table->string('password');
-            $table->timestamps();
+        Schema::table('pages', function (Blueprint $table) {
+            $table->json('banned_words')->default('[]');
         });
     }
 
@@ -29,6 +25,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pages');
+        //
     }
 };

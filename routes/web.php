@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\WordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,4 +16,13 @@ use App\Http\Controllers\PageController;
 |
 */
 
-Route::get('/', [PageController::class, 'index']);
+Route::post('page/auth/login', [AuthController::class, 'login']);
+Route::get('page/{id}/logout', [AuthController::class, 'logout']);
+Route::post('word/{pageId}/ban', [WordController::class, 'banWord']);
+Route::post('word/{pageId}/unban', [WordController::class, 'unbanWord']);
+Route::post('word/{pageId}/new', [WordController::class, 'newWord']);
+Route::resource('page', PageController::class);
+
+Route::get('/', function() {
+    return redirect()->route('page.index');
+});
